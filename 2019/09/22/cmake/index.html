@@ -55,28 +55,33 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Xudong&#39;s blog">
-<meta property="og:url" content="http://liaoxudong.cn/index.html">
+  <meta name="description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
+<meta name="keywords" content="Linux, Tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmake">
+<meta property="og:url" content="http://liaoxudong.cn/2019/09/22/cmake/index.html">
 <meta property="og:site_name" content="Xudong&#39;s blog">
+<meta property="og:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-22T06:21:06.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xudong&#39;s blog">
-  <link rel="canonical" href="http://liaoxudong.cn/">
+<meta name="twitter:title" content="cmake">
+<meta name="twitter:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
+  <link rel="canonical" href="http://liaoxudong.cn/2019/09/22/cmake/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Xudong's blog</title>
+  <title>cmake | Xudong's blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -218,12 +223,13 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="http://liaoxudong.cn/2019/09/22/cmake/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,9 +242,8 @@
       <meta itemprop="name" content="Xudong's blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/22/cmake/" class="post-title-link" itemprop="url">cmake</a>
+        <h1 class="post-title" itemprop="name headline">cmake
+
           
         </h1>
 
@@ -272,7 +277,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h2><h3 id="为什么要用cmake"><a href="#为什么要用cmake" class="headerlink" title="为什么要用cmake"></a>为什么要用cmake</h3><p>CMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。</p>
+        <h2 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h2><h3 id="为什么要用cmake"><a href="#为什么要用cmake" class="headerlink" title="为什么要用cmake"></a>为什么要用cmake</h3><p>CMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。</p>
 <h3 id="First-Example"><a href="#First-Example" class="headerlink" title="First Example"></a>First Example</h3><ol>
 <li>项目名为hello，所以建立目录hello，所有的源代码和文档都应当位于这个目录下</li>
 <li>在hello目录下新建main.c 文件，代码如下:</li>
@@ -293,193 +298,52 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cmake .</span></span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/hello</span><br><span class="line"><span class="meta">$</span><span class="bash"> make </span></span><br><span class="line">Scanning dependencies of target hello</span><br><span class="line">[ 50%] Building C object CMakeFiles/hello.dir/main.c.o</span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Linking C executable hello</span></span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Built target hello</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./hello 1001001</span></span><br><span class="line">The square root of 1.001e+06 is 1000.5</span><br></pre></td></tr></table></figure>
 
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Linux-Tools/" rel="tag"># Linux, Tools</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/03/dc-cc/" rel="next" title="dc-cc">
+                  <i class="fa fa-chevron-left"></i> dc-cc
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://liaoxudong.cn/2019/09/03/dc-cc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xudong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xudong's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/03/dc-cc/" class="post-title-link" itemprop="url">dc-cc</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-03 09:31:00 / Modified: 09:53:10" itemprop="dateCreated datePublished" datetime="2019-09-03T09:31:00+08:00">2019-09-03</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Data-Center-Transport/" itemprop="url" rel="index"><span itemprop="name">Data Center Transport</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Data-Center-TCP"><a href="#Data-Center-TCP" class="headerlink" title="Data Center TCP"></a>Data Center TCP</h3>
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://liaoxudong.cn/2019/09/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xudong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xudong's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/03/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-03 08:38:13" itemprop="dateCreated datePublished" datetime="2019-09-03T08:38:13+08:00">2019-09-03</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-  </div>
-
-  
 
 
           </div>
@@ -498,6 +362,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -510,6 +379,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake"><span class="nav-number">1.</span> <span class="nav-text">CMake</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用cmake"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要用cmake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Example"><span class="nav-number">1.2.</span> <span class="nav-text">First Example</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

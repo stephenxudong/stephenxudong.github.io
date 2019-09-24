@@ -56,14 +56,14 @@
 </script>
 
   <meta name="description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
-<meta name="keywords" content="Linux, Tools">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cmake">
 <meta property="og:url" content="http://liaoxudong.cn/2019/09/22/cmake/index.html">
 <meta property="og:site_name" content="Xudong&#39;s blog">
 <meta property="og:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-22T06:21:06.780Z">
+<meta property="og:updated_time" content="2019-09-24T02:01:03.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cmake">
 <meta name="twitter:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
@@ -258,12 +258,33 @@
                 
               
 
-              <time title="Created: 2019-09-22 12:26:43 / Modified: 14:21:06" itemprop="dateCreated datePublished" datetime="2019-09-22T12:26:43+08:00">2019-09-22</time>
+              <time title="Created: 2019-09-22 12:26:43" itemprop="dateCreated datePublished" datetime="2019-09-22T12:26:43+08:00">2019-09-22</time>
             </span>
           
             
 
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-24 10:01:03" itemprop="dateModified" datetime="2019-09-24T10:01:03+08:00">2019-09-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -295,7 +316,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+—- hello</span><br><span class="line">|	+-— main.c </span><br><span class="line">|	+-— CMakeLists.txt</span><br></pre></td></tr></table></figure>
 
 <p>然后使用CMake生成Makefile，再编译执行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cmake .</span></span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/hello</span><br><span class="line"><span class="meta">$</span><span class="bash"> make </span></span><br><span class="line">Scanning dependencies of target hello</span><br><span class="line">[ 50%] Building C object CMakeFiles/hello.dir/main.c.o</span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Linking C executable hello</span></span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Built target hello</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./hello 1001001</span></span><br><span class="line">The square root of 1.001e+06 is 1000.5</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cmake .</span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/hello</span><br><span class="line"><span class="meta">$</span> make </span><br><span class="line">Scanning dependencies of target hello</span><br><span class="line">[ 50%] Building C object CMakeFiles/hello.dir/main.c.o</span><br><span class="line"><span class="meta">[100%</span>] Linking C executable hello</span><br><span class="line"><span class="meta">[100%</span>] Built target hello</span><br><span class="line"><span class="meta">$</span> ./hello 1001001</span><br><span class="line">The square root of 1.001e+06 is 1000.5</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -312,7 +333,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Linux-Tools/" rel="tag"># Linux, Tools</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
             
           </div>
         
@@ -331,6 +352,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/09/24/Listening vocabulary/" rel="prev" title="TOEFL Listening Vabs">
+                  TOEFL Listening Vabs <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -411,7 +436,23 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -428,7 +469,15 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>

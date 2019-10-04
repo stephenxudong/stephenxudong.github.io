@@ -55,18 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
-<meta name="keywords" content="Linux">
+  <meta name="description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cmake">
 <meta property="og:url" content="http://liaoxudong.cn/2019/09/22/cmake/index.html">
 <meta property="og:site_name" content="Xudong Liao">
-<meta property="og:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
+<meta property="og:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-25T07:56:39.942Z">
+<meta property="og:updated_time" content="2019-10-01T07:41:57.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cmake">
-<meta name="twitter:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。 First Example 项目名为hello，所以建立目录hello，所有的源代">
+<meta name="twitter:description" content="CMake为什么要用cmakeCMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。">
   <link rel="canonical" href="http://liaoxudong.cn/2019/09/22/cmake/">
 
 
@@ -271,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-25 15:56:39" itemprop="dateModified" datetime="2019-09-25T15:56:39+08:00">2019-09-25</time>
+                <time title="Modified: 2019-10-01 15:41:57" itemprop="dateModified" datetime="2019-10-01T15:41:57+08:00">2019-10-01</time>
               </span>
             
           
@@ -281,7 +280,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Build-Tools/" itemprop="url" rel="index"><span itemprop="name">Build Tools</span></a></span>
 
                 
                 
@@ -300,47 +299,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h2><h3 id="为什么要用cmake"><a href="#为什么要用cmake" class="headerlink" title="为什么要用cmake"></a>为什么要用cmake</h3><p>CMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。</p>
-<h3 id="First-Example"><a href="#First-Example" class="headerlink" title="First Example"></a>First Example</h3><ol>
+        <h2 id="cmake">CMake</h2><h3 id="为什么要用cmake">为什么要用cmake</h3><p>CMake和AutoTools之类的是make系统上层的的大型项目构建工具，通过其可以编写跨平台的配置文件，用于生成底层的Makefile。Makefile具有平台依赖性，一般会基于特定的编译环境来构建flow，而且手动编写Makefile的工作量比较大，解决依赖关系的时候也容易出错。</p><a id="more"></a>
+
+
+<h3 id="first-example">First Example</h3>
+<ol type="1">
 <li>项目名为hello，所以建立目录hello，所有的源代码和文档都应当位于这个目录下</li>
 <li>在hello目录下新建main.c 文件，代码如下:</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">fprintf</span>(<span class="built_in">stdout</span>,<span class="string">"Usage: %s number\n"</span>,argv[<span class="number">0</span>]);</span><br><span class="line">    	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">double</span> inputValue = atof(argv[<span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">double</span> outputValue = <span class="built_in">sqrt</span>(inputValue);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stdout</span>,<span class="string">"The square root of %g is %g\n"</span>,</span><br><span class="line">          inputValue, outputValue);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
+<ol start="3" type="1">
 <li>在hello目录下检录一个新的文件CMakeLists.txt，这也就是CMake所处理的脚本，如下</li>
 </ol>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span> (VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello)</span><br><span class="line"><span class="keyword">aux_source_directory</span>(. src_list)</span><br><span class="line"><span class="keyword">add_executable</span>(hello <span class="variable">$&#123;src_list&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
+<ol start="4" type="1">
 <li>编译项目，目录结构如下。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+—- hello</span><br><span class="line">|	+-— main.c </span><br><span class="line">|	+-— CMakeLists.txt</span><br></pre></td></tr></table></figure>
-
 <p>然后使用CMake生成Makefile，再编译执行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cmake .</span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/hello</span><br><span class="line"><span class="meta">$</span> make </span><br><span class="line">Scanning dependencies of target hello</span><br><span class="line">[ 50%] Building C object CMakeFiles/hello.dir/main.c.o</span><br><span class="line"><span class="meta">[100%</span>] Linking C executable hello</span><br><span class="line"><span class="meta">[100%</span>] Built target hello</span><br><span class="line"><span class="meta">$</span> ./hello 1001001</span><br><span class="line">The square root of 1.001e+06 is 1000.5</span><br></pre></td></tr></table></figure>
-
-<h3 id="Add-a-library"><a href="#Add-a-library" class="headerlink" title="Add a library"></a>Add a library</h3><ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cmake .</span></span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/hello</span><br><span class="line"><span class="meta">$</span><span class="bash"> make </span></span><br><span class="line">Scanning dependencies of target hello</span><br><span class="line">[ 50%] Building C object CMakeFiles/hello.dir/main.c.o</span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Linking C executable hello</span></span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Built target hello</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./hello 1001001</span></span><br><span class="line">The square root of 1.001e+06 is 1000.5</span><br></pre></td></tr></table></figure>
+<h3 id="add-a-library">Add a library</h3>
+<ol type="1">
 <li>项目的结构如下</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+—- project1</span><br><span class="line">|	+-— main.cpp </span><br><span class="line">|	+-— CMakeLists.txt</span><br><span class="line">| 	+-- test</span><br><span class="line">|	|	+-- test.h</span><br><span class="line">|	|	+-- test.cpp</span><br><span class="line">|	|	+-- CMakeLists.txt</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<ol start="2" type="1">
 <li>代码如下</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******main.cpp*******/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	printMsg();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*******test.h*******/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> TEST_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TEST_H</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printMsg</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*******test.cpp*******/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printMsg</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello, I am from Test.cpp"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>相应的cmake配置文件如下。首先将test/下的文件编译成共享库</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(. DIR_SRCS)</span><br><span class="line"><span class="comment"># compile to a shared library </span></span><br><span class="line"><span class="keyword">add_library</span>(<span class="keyword">test</span> <span class="variable">$&#123;DIR_SRCS&#125;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>接着给主文件目录下的cmake配置文件中添加include路径，以及链接共享库</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(main)</span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>) </span><br><span class="line"><span class="comment"># add internal sub-source dir </span></span><br><span class="line"><span class="keyword">add_subdirectory</span>(<span class="keyword">test</span>) </span><br><span class="line"><span class="comment"># add extra include path</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">test</span>)</span><br><span class="line"><span class="keyword">add_executable</span>(main main.cpp)</span><br><span class="line"><span class="comment"># link lib</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>( main <span class="keyword">test</span> )</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
+<ol start="3" type="1">
 <li>运行结果如下</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cmake .</span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/project1</span><br><span class="line"><span class="meta">$</span> make</span><br><span class="line">[ 50%] Built target test</span><br><span class="line">Scanning dependencies of target main</span><br><span class="line">[ 75%] Building CXX object CMakeFiles/main.dir/main.cpp.o</span><br><span class="line"><span class="meta">[100%</span>] Linking CXX executable main</span><br><span class="line"><span class="meta">[100%</span>] Built target main</span><br><span class="line"><span class="meta">$</span> ./main</span><br><span class="line">Hello, I am from Test.cpp</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cmake .</span></span><br><span class="line">-- The C compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- The CXX compiler identification is AppleClang 10.0.1.10010046</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc</span><br><span class="line">-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - done</span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - done</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++</span><br><span class="line">-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - done</span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - done</span><br><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: /Users/stephen/Desktop/tmp/project1</span><br><span class="line"><span class="meta">$</span><span class="bash"> make</span></span><br><span class="line">[ 50%] Built target test</span><br><span class="line">Scanning dependencies of target main</span><br><span class="line">[ 75%] Building CXX object CMakeFiles/main.dir/main.cpp.o</span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Linking CXX executable main</span></span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Built target main</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./main</span></span><br><span class="line">Hello, I am from Test.cpp</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -351,15 +345,6 @@
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-            
-          </div>
-        
 
         
 
@@ -376,8 +361,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/09/24/Listening vocabulary/" rel="prev" title="TOEFL Listening Vabs">
-                  TOEFL Listening Vabs <i class="fa fa-chevron-right"></i>
+                <a href="/2019/09/24/Listening vocabulary/" rel="prev" title="TOEFL Listening Vocabularies">
+                  TOEFL Listening Vocabularies <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -427,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake"><span class="nav-number">1.</span> <span class="nav-text">CMake</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用cmake"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要用cmake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Example"><span class="nav-number">1.2.</span> <span class="nav-text">First Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-a-library"><span class="nav-number">1.3.</span> <span class="nav-text">Add a library</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmake"><span class="nav-number">1.</span> <span class="nav-text">CMake</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用cmake"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要用cmake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#first-example"><span class="nav-number">1.2.</span> <span class="nav-text">First Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-a-library"><span class="nav-number">1.3.</span> <span class="nav-text">Add a library</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -442,7 +427,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -465,7 +450,9 @@
         
           
         
-        <span class="site-state-item-count">4</span>
+          
+        
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -486,9 +473,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
